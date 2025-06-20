@@ -2,7 +2,7 @@ import swaggerAutogen from 'swagger-autogen'
 
 const outputFile = './swagger.json'
 const endPointsFiles = ['./app.js']
-
+// {scheme}://{host}{basePath}{ruta del endpoint}
 const doc = {
     info: {
         title: 'Gestor de empresas',
@@ -10,6 +10,7 @@ const doc = {
     },
     host: 'gestordeempresas-production.up.railway.app',
     schemes: ['https'],
+    basePath: '/api/',
     tags: [
         { name: 'Company', description: 'Gestión de empresas' },
         { name: 'Category', description: 'Gestión de categorías' },

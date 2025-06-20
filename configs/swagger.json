@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "gestordeempresas-production.up.railway.app",
-  "basePath": "/",
+  "basePath": "/api/",
   "tags": [
     {
       "name": "Company",
@@ -25,7 +25,7 @@
     "https"
   ],
   "paths": {
-    "/api/v1/company/": {
+    "/v1/company/": {
       "post": {
         "tags": [
           "Company"
@@ -112,7 +112,7 @@
         }
       }
     },
-    "/api/v1/company/{id}": {
+    "/v1/company/{id}": {
       "put": {
         "tags": [
           "Company"
@@ -174,7 +174,7 @@
         }
       }
     },
-    "/api/v1/company/order/az": {
+    "/v1/company/order/az": {
       "get": {
         "tags": [
           "Company"
@@ -204,7 +204,7 @@
         }
       }
     },
-    "/api/v1/company/order/za": {
+    "/v1/company/order/za": {
       "get": {
         "tags": [
           "Company"
@@ -234,7 +234,7 @@
         }
       }
     },
-    "/api/v1/company/filter/year": {
+    "/v1/company/filter/year": {
       "get": {
         "tags": [
           "Company"
@@ -264,7 +264,7 @@
         }
       }
     },
-    "/api/v1/company/filter/category": {
+    "/v1/company/filter/category": {
       "get": {
         "tags": [
           "Company"
@@ -307,7 +307,7 @@
         }
       }
     },
-    "/api/v1/company/informe": {
+    "/v1/company/informe": {
       "get": {
         "tags": [
           "Company"
@@ -331,7 +331,7 @@
         }
       }
     },
-    "/api/v1/category/": {
+    "/v1/category/": {
       "post": {
         "tags": [
           "Category"
@@ -410,7 +410,7 @@
         }
       }
     },
-    "/api/v1/category/{id}": {
+    "/v1/category/{id}": {
       "put": {
         "tags": [
           "Category"
@@ -500,7 +500,7 @@
         }
       }
     },
-    "/api/v1/user/": {
+    "/v1/user/": {
       "post": {
         "tags": [
           "User"
@@ -581,7 +581,7 @@
         }
       }
     },
-    "/api/v1/user/{id}": {
+    "/v1/user/{id}": {
       "put": {
         "tags": [
           "User"
@@ -641,7 +641,7 @@
         }
       }
     },
-    "/api/v1/user/login": {
+    "/v1/user/login": {
       "post": {
         "tags": [
           "User"
