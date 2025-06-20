@@ -5,7 +5,7 @@
     "description": "Una aplicacion para llevar el control de nuestras empresas",
     "version": "1.0.0"
   },
-  "host": "localhost:2880",
+  "host": "https://gestordeempresas-production.up.railway.app/api/v1/",
   "basePath": "/",
   "tags": [
     {
@@ -22,7 +22,7 @@
     }
   ],
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/v1/company/": {
