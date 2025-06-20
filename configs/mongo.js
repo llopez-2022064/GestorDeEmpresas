@@ -1,6 +1,9 @@
 'use strict'
 
 import mongoose from "mongoose"
+import { config } from "dotenv"
+
+config()
 
 export const connect = async()=>{
     try {
@@ -15,7 +18,7 @@ export const connect = async()=>{
         mongoose.connection.on('disconnected', () => console.log('MongoDB | disconnected'))
         mongoose.connection.on('reconnected', () => console.log('MongoDB | reconnected to mongodb'))
         
-        await mongoose.connect('mongodb://127.0.0.1:27017/gestorDeEmpresasIN6AV')
+        await mongoose.connect(process.env.MONGODB_URI)
     } catch (error) {
         console.error('Database connection failed ', error)
     }

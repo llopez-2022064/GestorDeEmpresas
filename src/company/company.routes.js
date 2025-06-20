@@ -6,13 +6,13 @@ import { addCompany, getCompanies, updateCompany, createExcel, getCompaniesAZ, g
 
 const api = Router()
 
-api.post('/addCompany', [validateJwt] ,addCompany)
-api.put('/updateCompany/:id', [validateJwt], updateCompany)
-api.get('/getCompanies', [validateJwt], getCompanies)
-api.get('/getCompaniesAZ', [validateJwt], getCompaniesAZ)
-api.get('/getCompaniesZA', [validateJwt], getCompaniesZA)
-api.get('/getCompaniesForYear', [validateJwt], getCompaniesForYear)
-api.get('/getCompaniesForCategory', [validateJwt], getCompaniesForCategory)
+api.post('/', [validateJwt] ,addCompany)
+api.put('/:id', [validateJwt], updateCompany)
+api.get('/', [validateJwt], getCompanies)
+api.get('/order/az', [validateJwt], getCompaniesAZ)
+api.get('/order/za', [validateJwt], getCompaniesZA)
+api.get('/filter/year', [validateJwt], getCompaniesForYear)
+api.get('/filter/category', [validateJwt], getCompaniesForCategory)
 
 api.get('/informe', [validateJwt] , createExcel)
 

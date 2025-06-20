@@ -3,7 +3,18 @@
 import Category from './category.model.js'
 import Company from '../company/company.model.js'
 
+
 export const addCategory = async(req, res) =>{
+    // #swagger.tags = ['Category']
+    // #swagger.summary = 'Crear nueva categoría'
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Datos de la categoría',
+        schema: {
+            nameCategory: '',
+            description: ''
+        }
+    } */
     try {
         let data = req.body
         
@@ -21,6 +32,17 @@ export const addCategory = async(req, res) =>{
 }
 
 export const updateCategory = async(req, res) =>{
+    // #swagger.tags = ['Category']
+    // #swagger.summary = 'Actualizar categoría'
+    // #swagger.parameters['id'] = { in: 'path', description: 'ID de la categoría', required: true }
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Datos a actualizar',
+        schema: {
+            nameCategory: '',
+            description: ''
+        }
+    } */
     try {
         let data = req.body
         let {id} = req.params
@@ -44,6 +66,9 @@ export const updateCategory = async(req, res) =>{
 }
 
 export const deleteCategory = async(req, res) =>{
+    // #swagger.tags = ['Category']
+    // #swagger.summary = 'Eliminar categoría'
+    // #swagger.parameters['id'] = { in: 'path', description: '', required: true }
     try {
         let idCategory = req.params.id
         let categoryToDelete = await Category.findOne({ _id: idCategory })
@@ -67,6 +92,8 @@ export const deleteCategory = async(req, res) =>{
 }
 
 export const getCategory = async(req, res) =>{
+    // #swagger.tags = ['Category']
+    // #swagger.summary = 'Obtener todas las categorías'
     try {
         let categories = await Category.find()
         if(categories.length == 0) return res.status(404).send({message: 'Categories not found'})

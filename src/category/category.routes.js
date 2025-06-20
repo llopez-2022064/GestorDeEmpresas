@@ -6,9 +6,9 @@ import {addCategory, updateCategory, deleteCategory, getCategory} from './catego
 
 const api = Router()
 
-api.post('/addCategory', [validateJwt], addCategory)
-api.put('/updateCategory/:id', [validateJwt], updateCategory)
-api.delete('/deleteCategory/:id', [validateJwt], deleteCategory)
-api.get('/getCategory', [validateJwt], getCategory)
+api.post('/', [validateJwt], addCategory)
+api.put('/:id', [validateJwt], updateCategory)
+api.delete('/:id', [validateJwt], deleteCategory)
+api.get('/', [validateJwt], getCategory)
 
 export default api

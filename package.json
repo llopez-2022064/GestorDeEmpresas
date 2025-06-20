@@ -19,10 +19,12 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.0",
     "morgan": "^1.10.0",
+    "swagger-ui-express": "^5.0.1",
     "xlsx-populate": "^1.21.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "swagger-autogen": "^2.23.7"
   },
   "type": "module"
 }

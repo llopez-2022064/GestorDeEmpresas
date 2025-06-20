@@ -5,6 +5,20 @@ import { checkPassword, encrypt, checkUpdate } from '../utils/validator.js'
 import User from './user.model.js'
 
 export const createUser = async (req, res) => {
+    // #swagger.tags = ['User']
+    // #swagger.summary = 'Crear un nuevo usuario'
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Datos del usuario',
+        schema: {
+            name: '',
+            lastName: '',
+            mail: '',
+            phone: '',
+            username: '',
+            password: ''
+        }
+    } */
     try {
         let data = req.body
 
@@ -22,6 +36,18 @@ export const createUser = async (req, res) => {
 }
 
 export const login = async (req, res) => {
+    // #swagger.tags = ['User']
+    // #swagger.summary = 'Login'
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Credenciales',
+        schema: {
+            mail: '',
+            phone: '',
+            username: '',
+            password: ''
+        }
+    } */
     try {
         let { mail, username, password, phone } = req.body
         let user = await User.findOne({ $or: [{ username: username }, { password: password }, { mail: mail }, { phone: phone }] })
@@ -50,6 +76,8 @@ export const login = async (req, res) => {
 }
 
 export const updateUser = async (req, res) => {
+    // #swagger.tags = ['User']
+    // #swagger.summary = 'Actualizar usuario'
     try {
         let userID = req.user.id
         let { id } = req.params
@@ -88,6 +116,8 @@ export const updateUser = async (req, res) => {
 }
 
 export const getUsers = async (req, res) => {
+    // #swagger.tags = ['User']
+    // #swagger.summary = 'Listar usuarios'
     try {
         let users = await User.find()
         if (users.length == 0) return res.status(404).send({ message: 'Users not found' })

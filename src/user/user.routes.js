@@ -6,9 +6,9 @@ import { validateJwt } from '../middlewares/validate-jwt.js'
 
 const api = Router()
 
-api.post('/createUser', createUser)
-api.put('/updateUser/:id', [validateJwt], updateUser)
+api.post('/', createUser)
+api.put('/:id', [validateJwt], updateUser)
 api.post('/login', login)
-api.get('/getUsers', [validateJwt], getUsers)
+api.get('/', [validateJwt], getUsers)
 
 export default api

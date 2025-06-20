@@ -4,6 +4,18 @@ import Company from './company.model.js'
 import Category from '../category/category.model.js'
 
 export const addCompany = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Crear una nueva empresa'
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        descripcion: 'Datos de la empresa',
+        schema: {
+            nameCompany: '',
+            ImpactLevel: 'Alto/Medio/Bajo',
+            yearsOfTrajectory: 0,
+            businessCategory: 0
+        }
+    } */
     try {
         let data = req.body
 
@@ -20,19 +32,19 @@ export const addCompany = async (req, res) => {
     }
 }
 
-// export const deleteCompany = async (req, res) => {
-//     try {
-//         let { id } = req.params
-//         let company = await Company.findOneAndDelete({ _id: id })
-//         if (!company) return res.status(404).send({ message: 'Company not found and not deleted' })
-//         return res.status(200).send({ message: `Company deteled successfully` })
-//     } catch (error) {
-//         console.error(error)
-//         return res.status(500).send({ message: 'Error delete Company' })
-//     }
-// }
-
 export const updateCompany = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Actualizar una empresa'
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Actualizar una empresa',
+        schema: {
+            nameCompany: '',
+            ImpactLevel: 'Baja/Media/Alta',
+            yearsOfTrajectory: 0,
+            businessCategory: 0
+        }
+    }*/
     try {
         let { id } = req.params
         let data = req.body
@@ -54,6 +66,8 @@ export const updateCompany = async (req, res) => {
 
 //Obtener todas las empresas
 export const getCompanies = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Listar Empresas'
     try {
         let listOfCompany = await Company.find().populate('businessCategory', ['nameCategory', '-_id'])
         if (listOfCompany.length == 0) return res.status(404).send({ message: 'Not found' })
@@ -66,6 +80,8 @@ export const getCompanies = async (req, res) => {
 
 //Obtener las empresas de A-Z
 export const getCompaniesAZ = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Listar Empresas A-Z'
     try {
         let listOfCompany = await Company.find().populate('businessCategory', ['nameCategory', '-_id']).sort({ nameCompany: 1 })
         if (listOfCompany.length === 0) return res.status(404).send({ message: 'Not found' })
@@ -78,6 +94,8 @@ export const getCompaniesAZ = async (req, res) => {
 
 //Obtener empresas de Z-A
 export const getCompaniesZA = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Listar Empresas Z-A'
     try {
         let listOfCompany = await Company.find().populate('businessCategory', ['nameCategory', '-_id']).sort({ nameCompany: -1 });
         if (listOfCompany.length === 0) return res.status(404).send({ message: 'Not found' });
@@ -90,6 +108,8 @@ export const getCompaniesZA = async (req, res) => {
 
 //Obtener empresas por años de experiencia de menor a mayor
 export const getCompaniesForYear = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Listar Empresas Por Año'
     try {
         let listOfCompany = await Company.find().populate('businessCategory', ['nameCategory', '-_id']).sort({ yearsOfTrajectory: 1 })
         if (listOfCompany.length === 0) return res.status(404).send({ message: 'Not found' })
@@ -101,6 +121,14 @@ export const getCompaniesForYear = async (req, res) => {
 }
 
 export const getCompaniesForCategory = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Listar Empresas'
+    /* #swagger.parameters=['body'] = {
+        in: 'body',
+        schema: {
+            nameCompany: ''
+        }
+    } */
     try {
         let { search } = req.body
 
@@ -127,6 +155,8 @@ export const getCompaniesForCategory = async (req, res) => {
 import xlsxPopulate from 'xlsx-populate'
 
 export const createExcel = async (req, res) => {
+    // #swagger.tags = ['Company']
+    // #swagger.summary = 'Descargar Excel con la información de las empresas'
     try {
         //Crear un nuevo libro de Excel en blanco
         let workbook = await xlsxPopulate.fromBlankAsync()
