@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "gestordeempresas-production.up.railway.app",
-  "basePath": "/api/v1/",
+  "basePath": "/",
   "tags": [
     {
       "name": "Company",

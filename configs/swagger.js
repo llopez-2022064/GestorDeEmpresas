@@ -9,7 +9,6 @@ const doc = {
         description: 'Una aplicacion para llevar el control de nuestras empresas'
     },
     host: 'gestordeempresas-production.up.railway.app',
-    basePath: '/api/v1/',
     schemes: ['https'],
     tags: [
         { name: 'Company', description: 'Gestión de empresas' },
