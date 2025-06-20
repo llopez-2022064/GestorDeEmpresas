@@ -8,8 +8,8 @@ const doc = {
         title: 'Gestor de empresas',
         description: 'Una aplicacion para llevar el control de nuestras empresas'
     },
-    host: 'localhost:2880',
-    schemes: ['http'],
+    host: 'https://gestordeempresas-production.up.railway.app/api/v1/',
+    schemes: ['https'],
     tags: [
         { name: 'Company', description: 'Gestión de empresas' },
         { name: 'Category', description: 'Gestión de categorías' },
